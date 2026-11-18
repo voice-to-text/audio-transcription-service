@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WAV to Text Transcription Software Offline - Audio Transcription Studio</title>
+    <meta name="description" content="Transcribe uncompressed PCM and float WAV recordings into TXT, SRT, and VTT subtitles on macOS and Windows." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/wav-to-text-transcription.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="WAV to Text Transcription Software Offline" />
+    <meta property="og:description" content="Transcribe uncompressed PCM and float WAV recordings into TXT, SRT, and VTT subtitles on macOS and Windows." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/wav-to-text-transcription.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "WAV to text transcription on desktop",
+        "description": "Transcribe uncompressed PCM and float WAV recordings into TXT, SRT, and VTT subtitles on macOS and Windows.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/wav-to-text-transcription.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>WAV to text transcription on desktop</h1>
+          <p class="lead">Process studio WAV recordings, field recorder clips, and voiceovers locally with exact millisecond timings.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>Direct PCM and IEEE float support</h2>
+          <p>Symphonia reads standard 16-bit PCM, 24-bit PCM, and 32-bit float WAV containers at any sample rate and normalizes them to 16 kHz mono for whisper.cpp.</p>
+          <h2>Silence detection for clean tracks</h2>
+          <p>Studio recordings with silent lead-ins or pure silence clips skip inference when RMS stays below the noise floor, preventing spurious Whisper text.</p>
+          <h2>Clickable segment verification</h2>
+          <p>Play back the WAV file in the built-in player and click any segment row to jump straight to that millisecond.</p>
+          <pre>recording.wav (48 kHz stereo) -&gt; 16 kHz mono -&gt; recording.srt</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./mp3-to-text-offline.html">Convert MP3 files to text offline</a></li>
+            <li><a href="./noisy-audio-and-silence-vad.html">Handle background noise, multiple speakers, and silence</a></li>
+            <li><a href="./timestamped-transcript-player.html">Click timestamps to verify spoken audio</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

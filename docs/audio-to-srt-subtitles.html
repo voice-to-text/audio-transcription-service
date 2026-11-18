@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio to SRT Subtitle Generator Offline - Audio Transcription Studio</title>
+    <meta name="description" content="Generate valid SubRip SRT files with HH:MM:SS,mmm timestamps from MP3, WAV, M4A, and MP4 files locally." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/audio-to-srt-subtitles.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Audio to SRT Subtitle Generator Offline" />
+    <meta property="og:description" content="Generate valid SubRip SRT files with HH:MM:SS,mmm timestamps from MP3, WAV, M4A, and MP4 files locally." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/audio-to-srt-subtitles.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Generate SRT subtitles from audio and video",
+        "description": "Generate valid SubRip SRT files with HH:MM:SS,mmm timestamps from MP3, WAV, M4A, and MP4 files locally.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/audio-to-srt-subtitles.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Generate SRT subtitles from audio and video</h1>
+          <p class="lead">Create numbered SubRip cue files beside every recording with monotonic millisecond timings.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>Standard SubRip formatting</h2>
+          <p>Each cue includes a sequential index, HH:MM:SS,mmm start and end timestamps with comma separators, and trimmed speech text.</p>
+          <h2>Multi-chunk offset alignment</h2>
+          <p>For 5-minute and 1-hour files split across multiple VAD chunks, each chunk offset in milliseconds is added to Whisper segment offsets so cues align with the full timeline.</p>
+          <h2>Atomic writes next to source</h2>
+          <p>SRT files write to a temporary file and rename atomically so video editors never read half-written subtitle files.</p>
+          <pre>1
+00:00:01,700 --&gt; 00:00:04,200
+Beginning checkpoint at two seconds.</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./audio-to-vtt-webvtt-captions.html">Generate WebVTT captions from audio</a></li>
+            <li><a href="./mp4-video-to-text-subtitles.html">Extract text and subtitles from MP4 video</a></li>
+            <li><a href="./long-recordings-one-hour-transcription.html">Transcribe 1-hour recordings without losing timings</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHA-256 Duplicate Audio Protection for Transcription Queues - Audio Transcription Studio</title>
+    <meta name="description" content="Prevent wasted CPU time by skipping already transcribed files and identical copies using SHA-256 content hashes." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/duplicate-file-protection-sha256.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="SHA-256 Duplicate Audio Protection for Transcription Queues" />
+    <meta property="og:description" content="Prevent wasted CPU time by skipping already transcribed files and identical copies using SHA-256 content hashes." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/duplicate-file-protection-sha256.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Skip duplicate audio files automatically",
+        "description": "Prevent wasted CPU time by skipping already transcribed files and identical copies using SHA-256 content hashes.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/duplicate-file-protection-sha256.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Skip duplicate audio files automatically</h1>
+          <p class="lead">Every transcribed file is fingerprinted with SHA-256 so copies and re-drops are skipped instantly.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>Content-based deduplication</h2>
+          <p>Before running Whisper, Audio Transcription Studio hashes the file with SHA-256 and checks processed_hashes in queue_state.json.</p>
+          <h2>Copy-safe Watch Folder behavior</h2>
+          <p>Renaming or copying an already processed audio file into the Watch Folder marks it Skipped (Duplicate) once existing TXT, SRT, and VTT outputs are verified.</p>
+          <h2>Manual override when needed</h2>
+          <p>If you update models or want a fresh pass, click Re-transcribe on any item to force a new run.</p>
+          <pre>sha256(file) in processed_hashes &amp;&amp; outputs exist -&gt; status: skippedDuplicate</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./watch-folder-automation.html">Watch Folder automation and copy stability</a></li>
+            <li><a href="./batch-audio-transcription-queue.html">Batch transcription queue that survives restarts</a></li>
+            <li><a href="./offline-audio-transcription.html">Offline audio transcription app without internet</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

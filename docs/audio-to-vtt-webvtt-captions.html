@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate WebVTT (VTT) Captions from Audio Offline - Audio Transcription Studio</title>
+    <meta name="description" content="Export W3C-compliant WEBVTT caption files with dot millisecond timestamps from local MP3, WAV, M4A, and MP4 media." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/audio-to-vtt-webvtt-captions.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Generate WebVTT (VTT) Captions from Audio Offline" />
+    <meta property="og:description" content="Export W3C-compliant WEBVTT caption files with dot millisecond timestamps from local MP3, WAV, M4A, and MP4 media." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/audio-to-vtt-webvtt-captions.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Generate WebVTT captions from audio",
+        "description": "Export W3C-compliant WEBVTT caption files with dot millisecond timestamps from local MP3, WAV, M4A, and MP4 media.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/audio-to-vtt-webvtt-captions.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Generate WebVTT captions from audio</h1>
+          <p class="lead">Export standard WEBVTT files for web players and documentation portals alongside TXT and SRT.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>Spec-compliant WEBVTT header</h2>
+          <p>Every VTT export begins with the WEBVTT header followed by HH:MM:SS.mmm cues using dot separators.</p>
+          <h2>Clean handling of silent files</h2>
+          <p>If a recording contains only silence, the exporter writes a valid empty WEBVTT header without hallucinated cues.</p>
+          <h2>Instant preview in the studio</h2>
+          <p>Switch between Timestamped Segments, TXT, SRT, and VTT tabs in the right pane without opening an external text editor.</p>
+          <pre>WEBVTT
+
+00:00:00.000 --&gt; 00:00:04.400
+Welcome to Audio Transcription Studio.</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./audio-to-srt-subtitles.html">Generate SRT subtitles from audio and video</a></li>
+            <li><a href="./timestamped-transcript-player.html">Click timestamps to verify spoken audio</a></li>
+            <li><a href="./offline-whisper-formats.html">Supported formats, languages, and VAD chunking</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

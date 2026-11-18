@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MP4 Video to Text and Subtitles Converter Offline - Audio Transcription Studio</title>
+    <meta name="description" content="Extract speech from MP4 videos and generate synchronized SRT, VTT, and TXT files locally on macOS and Windows." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/mp4-video-to-text-subtitles.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="MP4 Video to Text and Subtitles Converter Offline" />
+    <meta property="og:description" content="Extract speech from MP4 videos and generate synchronized SRT, VTT, and TXT files locally on macOS and Windows." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/mp4-video-to-text-subtitles.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Extract text and subtitles from MP4 video",
+        "description": "Extract speech from MP4 videos and generate synchronized SRT, VTT, and TXT files locally on macOS and Windows.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/mp4-video-to-text-subtitles.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Extract text and subtitles from MP4 video</h1>
+          <p class="lead">Drop MP4 recordings, screen captures, and lectures to generate ready-to-use SRT and WebVTT captions.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>Automatic audio track selection</h2>
+          <p>When an MP4 file contains H.264 or HEVC video alongside AAC audio, the decoder skips video tracks and extracts only the audio stream for Whisper.</p>
+          <h2>Built-in video playback with captions</h2>
+          <p>Selecting a completed MP4 item opens an HTML5 video player connected to the local byte-range server so you can seek by clicking transcript lines.</p>
+          <h2>Sidecar SRT and VTT ready for editors</h2>
+          <p>Subtitle files land next to the MP4 with matching base filenames, ready for DaVinci Resolve, Premiere, Final Cut, or HTML5 video players.</p>
+          <pre>lecture.mp4 -&gt; lecture.txt + lecture.srt + lecture.vtt</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./audio-to-srt-subtitles.html">Generate SRT subtitles from audio and video</a></li>
+            <li><a href="./audio-to-vtt-webvtt-captions.html">Generate WebVTT captions from audio</a></li>
+            <li><a href="./timestamped-transcript-player.html">Click timestamps to verify spoken audio</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

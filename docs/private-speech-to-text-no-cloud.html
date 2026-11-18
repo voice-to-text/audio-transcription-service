@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Private Speech to Text Without Cloud Uploads - Audio Transcription Studio</title>
+    <meta name="description" content="Keep medical, legal, and internal meeting recordings private with local speech-to-text processing on macOS and Windows." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/private-speech-to-text-no-cloud.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Private Speech to Text Without Cloud Uploads" />
+    <meta property="og:description" content="Keep medical, legal, and internal meeting recordings private with local speech-to-text processing on macOS and Windows." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/private-speech-to-text-no-cloud.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Private speech to text with zero cloud uploads",
+        "description": "Keep medical, legal, and internal meeting recordings private with local speech-to-text processing on macOS and Windows.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/private-speech-to-text-no-cloud.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Private speech to text with zero cloud uploads</h1>
+          <p class="lead">Process confidential interviews and internal calls completely on your computer.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>No accounts and no telemetry</h2>
+          <p>Audio Transcription Studio does not ask for registration, credit cards, or API keys. Nothing leaves localhost: media streaming for the built-in player uses a loopback server on 127.0.0.1:4895.</p>
+          <h2>Sidecar exports stay beside your files</h2>
+          <p>Transcripts never sit in a third-party web dashboard. Every TXT, SRT, and VTT file writes atomically into the same folder as your source audio or video.</p>
+          <h2>Permission-safe error isolation</h2>
+          <p>If a folder is read-only or restricted, the exporter logs PERMISSION_DENIED and continues processing the rest of your batch.</p>
+          <pre>Audio -&gt; symphonia 16kHz PCM -&gt; whisper-cli (local) -&gt; source.txt / .srt / .vtt</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./offline-audio-transcription.html">Offline audio transcription app without internet</a></li>
+            <li><a href="./otter-ai-offline-alternative.html">Offline alternative to Otter.ai</a></li>
+            <li><a href="./duplicate-file-protection-sha256.html">Skip duplicate audio files automatically</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

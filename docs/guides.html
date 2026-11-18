@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Guides and Topic Clusters - Audio Transcription Studio</title>
+    <meta
+      name="description"
+      content="Complete directory of offline audio transcription guides covering MP3, WAV, M4A, MP4, SRT, VTT, Watch Folder automation, Russian/English speech, macOS, and Windows."
+    />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/guides.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html" aria-current="page">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Documentation and topic clusters</h1>
+          <p class="lead">Browse all 22 technical guides by format, workflow, language, and platform.</p>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container">
+          <div class="cluster-grid">
+            <div class="cluster-col">
+              <h2>Core Offline Transcription</h2>
+              <ul class="cluster-links">
+                <li><a href="./offline-audio-transcription.html">Offline audio transcription app without internet</a></li>
+                <li><a href="./whisper-desktop-app.html">Whisper desktop app with Watch Folder and player</a></li>
+                <li><a href="./private-speech-to-text-no-cloud.html">Private speech to text with zero cloud uploads</a></li>
+              </ul>
+            </div>
+            <div class="cluster-col">
+              <h2>Media Formats and Video</h2>
+              <ul class="cluster-links">
+                <li><a href="./mp3-to-text-offline.html">Convert MP3 files to text offline</a></li>
+                <li><a href="./wav-to-text-transcription.html">WAV to text transcription on desktop</a></li>
+                <li><a href="./m4a-voice-memo-to-text.html">Convert M4A voice memos to text offline</a></li>
+                <li><a href="./mp4-video-to-text-subtitles.html">Extract text and subtitles from MP4 video</a></li>
+                <li><a href="./offline-whisper-formats.html">Supported formats, languages, and VAD chunking</a></li>
+              </ul>
+            </div>
+            <div class="cluster-col">
+              <h2>Subtitles and Playback</h2>
+              <ul class="cluster-links">
+                <li><a href="./audio-to-srt-subtitles.html">Generate SRT subtitles from audio and video</a></li>
+                <li><a href="./audio-to-vtt-webvtt-captions.html">Generate WebVTT captions from audio</a></li>
+                <li><a href="./timestamped-transcript-player.html">Click timestamps to verify spoken audio</a></li>
+              </ul>
+            </div>
+            <div class="cluster-col">
+              <h2>Watch Folder and Queue</h2>
+              <ul class="cluster-links">
+                <li><a href="./batch-audio-transcription-queue.html">Batch transcription queue that survives restarts</a></li>
+                <li><a href="./duplicate-file-protection-sha256.html">Skip duplicate audio files automatically</a></li>
+                <li><a href="./watch-folder-automation.html">Watch Folder automation and copy stability</a></li>
+              </ul>
+            </div>
+            <div class="cluster-col">
+              <h2>Languages and Audio Quality</h2>
+              <ul class="cluster-links">
+                <li><a href="./russian-english-speech-to-text.html">Russian, English, and mixed speech recognition</a></li>
+                <li><a href="./noisy-audio-and-silence-vad.html">Handle background noise, multiple speakers, and silence</a></li>
+                <li><a href="./long-recordings-one-hour-transcription.html">Transcribe 1-hour recordings without losing timings</a></li>
+              </ul>
+            </div>
+            <div class="cluster-col">
+              <h2>Platforms and Alternatives</h2>
+              <ul class="cluster-links">
+                <li><a href="./macwhisper-free-alternative.html">Free open-source alternative to MacWhisper</a></li>
+                <li><a href="./otter-ai-offline-alternative.html">Offline alternative to Otter.ai</a></li>
+                <li><a href="./macos-apple-silicon-transcription.html">Offline Whisper transcription on macOS</a></li>
+                <li><a href="./windows-offline-transcription.html">Offline Whisper transcription on Windows</a></li>
+                <li><a href="./architecture-and-testing.html">Architecture, recovery, and end-to-end tests</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

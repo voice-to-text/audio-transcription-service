@@ -7,10 +7,16 @@
     <title>Audio Transcription Studio: Free Offline Whisper App for macOS and Windows</title>
     <meta
       name="description"
-      content="Free offline desktop audio and video transcription app for macOS and Windows built with Tauri 2, Rust, React, and whisper.cpp. Convert MP3, WAV, M4A, and MP4 into TXT, SRT, and VTT files locally."
+      content="Free offline audio and video transcription app for macOS and Windows using Tauri 2, Rust, React, and whisper.cpp. Convert MP3, WAV, M4A, and MP4 into TXT, SRT, and VTT files locally."
     />
     <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/" />
     <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Audio Transcription Studio: Offline Speech-to-Text for macOS and Windows" />
@@ -36,7 +42,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Free offline desktop audio and video transcription tool powered by Tauri 2, Rust, React, and whisper.cpp. Supports MP3, WAV, M4A, and MP4 with Watch Folder automation and TXT, SRT, and VTT export."
+        "description": "Free offline desktop audio and video transcription app built with Tauri 2, Rust, React, and whisper.cpp for MP3, WAV, M4A, and MP4 files."
       }
     </script>
     <script type="application/ld+json">
@@ -46,10 +52,10 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Does Audio Transcription Studio require internet access or API keys?",
+            "name": "Does Audio Transcription Studio work without internet access or API keys?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. Audio decoding, voice activity segmentation, Whisper inference, and TXT/SRT/VTT exports run completely locally on your macOS or Windows computer."
+              "text": "Yes. Decoding, voice activity chunking, Whisper recognition, and TXT, SRT, and VTT exports run locally on macOS and Windows."
             }
           },
           {
@@ -57,15 +63,7 @@
             "name": "Which audio and video formats are supported?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Audio Transcription Studio supports MP3, WAV, M4A, and MP4 files. You can drag and drop files directly or use a Watch Folder for automatic processing."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does Watch Folder prevent duplicate or incomplete transcription?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The folder watcher waits until a new file stops growing in size before queuing it, and tracks SHA-256 content hashes so previously processed recordings are skipped automatically."
+              "text": "The app supports MP3, WAV, M4A, and MP4 files via drag and drop or automatic Watch Folder monitoring."
             }
           }
         ]
@@ -82,8 +80,8 @@
         <nav class="nav-links" aria-label="Primary">
           <a href="./" aria-current="page">Overview</a>
           <a href="./watch-folder-automation.html">Watch Folder</a>
-          <a href="./offline-whisper-formats.html">Formats &amp; Languages</a>
-          <a href="./architecture-and-testing.html">Architecture &amp; Tests</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
           <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
         </nav>
       </div>
@@ -92,161 +90,247 @@
     <main>
       <section class="hero">
         <div class="container hero-grid">
-          <div>
-            <h1>Local audio and video transcription with zero cloud uploads</h1>
+          <div class="hero-copy">
+            <h1>Offline speech to text on desktop</h1>
             <p class="lead">
-              Convert MP3, WAV, M4A, and MP4 recordings into TXT, SRT, and VTT files on macOS and
-              Windows using Tauri 2, Rust, React, and whisper.cpp.
+              Convert MP3, WAV, M4A, and MP4 into TXT, SRT, and VTT locally.
             </p>
             <div class="cta-row">
               <a
-                class="btn btn-primary"
+                class="btn btn--primary"
                 href="https://github.com/voice-to-text/audio-transcription-service/releases"
                 >Download Release</a
               >
               <a
-                class="btn"
+                class="link-quiet"
                 href="https://github.com/voice-to-text/audio-transcription-service"
-                >View Source on GitHub</a
+                >View on GitHub</a
               >
             </div>
           </div>
-          <div class="code-card">
-            <div class="code-card-head">
-              <span>meeting_notes.srt</span>
-              <span>Local whisper.cpp output</span>
+
+          <div class="instrument" aria-label="Live Whisper export preview">
+            <div class="instrument-head">
+              <span class="instrument-title">Local Whisper Output</span>
+              <div class="switch-row" role="group" aria-label="Language sample">
+                <button type="button" class="switch-btn" data-sample="mixed" aria-pressed="true">Mixed RU+EN</button>
+                <button type="button" class="switch-btn" data-sample="en" aria-pressed="false">English</button>
+                <button type="button" class="switch-btn" data-sample="ru" aria-pressed="false">Russian</button>
+              </div>
             </div>
-            <pre>1
-00:00:00,000 --> 00:00:04,120
-Добрый день. Локальная студия распознаёт русскую речь.
+            <div class="instrument-bed">
+              <pre id="sample-code">1
+00:00:00,000 --&gt; 00:00:03,760
+Добрый день, локальная студия автоматически распознает русскую
 
 2
-00:00:04,120 --> 00:00:08,240
-Now we switch to English with clickable timestamps.</pre>
+00:00:03,760 --&gt; 00:00:05,440
+речи сохраняет субтитры.
+
+3
+00:00:06,000 --&gt; 00:00:10,840
+Now we switch to English to confirm bilingual subtitles.</pre>
+            </div>
+            <div class="instrument-foot">
+              <span id="sample-meta">Detected: mixed (ru+en)</span>
+              <span>Exports: .txt / .srt / .vtt</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section>
+      <section class="band">
         <div class="container">
-          <h2>Core capabilities</h2>
-          <div class="grid-3">
-            <article class="card">
-              <h3>Drag and drop queue</h3>
-              <p>
-                Drop MP3, WAV, M4A, or MP4 files into the studio window. Watch live per-file
-                progress and inspect corrupted files or access issues in the Error Log.
-              </p>
-              <a href="./offline-whisper-formats.html">Supported formats</a>
-            </article>
-            <article class="card">
-              <h3>Watch Folder automation</h3>
-              <p>
-                Point the studio at a folder. It waits until file copies finish, ignores
-                duplicates via SHA-256 hashes, and writes TXT, SRT, and VTT next to each file.
-              </p>
-              <a href="./watch-folder-automation.html">Watch Folder guide</a>
-            </article>
-            <article class="card">
-              <h3>Synced media playback</h3>
-              <p>
-                Click any timestamped line in the transcript viewer to seek the built-in audio or
-                video player directly to that second and adjust playback speed.
-              </p>
-              <a href="./architecture-and-testing.html">Technical details</a>
-            </article>
+          <div class="section-head">
+            <h2>Platforms and requirements</h2>
+            <p>One shared Rust and React codebase runs on macOS and Windows offline.</p>
+          </div>
+          <div class="ledger">
+            <div class="ledger-row">
+              <h3>Formats</h3>
+              <p>Pure-Rust symphonia decoding for MP3, WAV, M4A, and MP4 audio tracks.</p>
+              <span class="ledger-figure num">4 formats</span>
+            </div>
+            <div class="ledger-row">
+              <h3>Watch Folder</h3>
+              <p>Waits for file copy completion before queuing and skips SHA-256 duplicates.</p>
+              <span class="ledger-figure num">700 ms check</span>
+            </div>
+            <div class="ledger-row">
+              <h3>Silence and VAD</h3>
+              <p>Skips pure silence without hallucinations and chunks 1-hour files cleanly.</p>
+              <span class="ledger-figure num">16 kHz mono</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section>
+      <section class="band band--alt">
         <div class="container">
-          <h2>How Audio Transcription Studio compares</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Capability</th>
-                <th>Audio Transcription Studio</th>
-                <th>MacWhisper</th>
-                <th>Cloud Speech APIs</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>License and cost</td>
-                <td>Free (MIT open source)</td>
-                <td>Free tier + paid Pro</td>
-                <td>Per-minute usage fees</td>
-              </tr>
-              <tr>
-                <td>Desktop platforms</td>
-                <td>macOS and Windows</td>
-                <td>macOS only</td>
-                <td>Browser or CLI scripts</td>
-              </tr>
-              <tr>
-                <td>Offline privacy</td>
-                <td>100% local execution</td>
-                <td>Local execution</td>
-                <td>Files uploaded to servers</td>
-              </tr>
-              <tr>
-                <td>Watch Folder + duplicate guard</td>
-                <td>Included (SHA-256 + copy wait)</td>
-                <td>Pro tier only</td>
-                <td>Requires custom scripts</td>
-              </tr>
-              <tr>
-                <td>Sidecar exports</td>
-                <td>TXT, SRT, and VTT next to file</td>
-                <td>Manual or Pro batch</td>
-                <td>API JSON / VTT</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="section-head">
+            <h2>Before and after Watch Folder</h2>
+            <p>Drop a file once and let sidecar exports write next to the source.</p>
+          </div>
+          <div class="split-grid">
+            <div class="rule-block">
+              <h3>Manual terminal workflow</h3>
+              <p>
+                Extract audio with ffmpeg, run Whisper commands per file, convert timestamps, and
+                re-check which files finished.
+              </p>
+            </div>
+            <div class="rule-block">
+              <h3>Copy stability guard</h3>
+              <p>
+                Watch Folder tracks file byte sizes across 700 ms checks so partial downloads wait
+                until copying completes.
+              </p>
+            </div>
+            <div class="rule-block">
+              <h3>Automatic sidecar export</h3>
+              <p>
+                TXT, SRT, and VTT files write atomically beside the original recording while
+                SHA-256 hashes skip duplicates.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section>
+      <section class="band">
         <div class="container">
-          <h2>Frequently asked questions</h2>
-          <div class="faq-item">
-            <h3>Does Audio Transcription Studio require internet access or API keys?</h3>
-            <p>
-              No. Audio decoding, voice activity segmentation, Whisper speech recognition, and
-              subtitle export run locally on your machine.
-            </p>
+          <div class="section-head">
+            <h2>How it compares</h2>
+            <p>Free MIT software built for private local transcription.</p>
           </div>
-          <div class="faq-item">
-            <h3>How does it handle Russian, English, and mixed-language recordings?</h3>
-            <p>
-              Each speech chunk runs with automatic language detection in whisper.cpp, and the
-              language classifier inspects both Whisper metadata and Cyrillic/Latin scripts to label
-              English, Russian, or mixed recordings.
-            </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Audio Transcription Studio</th>
+                  <th>MacWhisper</th>
+                  <th>Cloud APIs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Price</td>
+                  <td>Free (MIT)</td>
+                  <td>Free tier + Pro</td>
+                  <td>Per-minute fees</td>
+                </tr>
+                <tr>
+                  <td>Operating systems</td>
+                  <td>macOS and Windows</td>
+                  <td>macOS only</td>
+                  <td>Web browser</td>
+                </tr>
+                <tr>
+                  <td>Watch Folder</td>
+                  <td>Included with copy guard</td>
+                  <td>Pro tier only</td>
+                  <td>Custom scripts</td>
+                </tr>
+                <tr>
+                  <td>Duplicate guard</td>
+                  <td>SHA-256 hash tracking</td>
+                  <td>None</td>
+                  <td>None</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <div class="faq-item">
-            <h3>What happens if the app closes while transcribing a queue?</h3>
-            <p>
-              Queue items and processed file hashes are saved to disk. Reopening the app resets
-              unfinished items back to the queue and resumes processing automatically.
-            </p>
+        </div>
+      </section>
+
+      <section class="band band--alt">
+        <div class="container">
+          <div class="section-head">
+            <h2>Topic guides by cluster</h2>
+            <p>Explore format, language, automation, and platform documentation.</p>
+          </div>
+          <div class="cluster-grid">
+            <div class="cluster-col">
+              <h3>Formats and subtitles</h3>
+              <ul class="cluster-links">
+                <li><a href="./mp3-to-text-offline.html">MP3 to text offline</a></li>
+                <li><a href="./wav-to-text-transcription.html">WAV to text transcription</a></li>
+                <li><a href="./m4a-voice-memo-to-text.html">M4A voice memos to text</a></li>
+                <li><a href="./mp4-video-to-text-subtitles.html">MP4 video to subtitles</a></li>
+                <li><a href="./audio-to-srt-subtitles.html">Audio to SRT subtitles</a></li>
+                <li><a href="./audio-to-vtt-webvtt-captions.html">Audio to WebVTT captions</a></li>
+              </ul>
+            </div>
+            <div class="cluster-col">
+              <h3>Automation and quality</h3>
+              <ul class="cluster-links">
+                <li><a href="./watch-folder-automation.html">Watch Folder automation</a></li>
+                <li><a href="./batch-audio-transcription-queue.html">Batch processing queue</a></li>
+                <li><a href="./duplicate-file-protection-sha256.html">SHA-256 duplicate protection</a></li>
+                <li><a href="./russian-english-speech-to-text.html">Russian and English speech</a></li>
+                <li><a href="./noisy-audio-and-silence-vad.html">Noisy audio and silence VAD</a></li>
+                <li><a href="./long-recordings-one-hour-transcription.html">1-hour recordings</a></li>
+              </ul>
+            </div>
+            <div class="cluster-col">
+              <h3>Platforms and comparisons</h3>
+              <ul class="cluster-links">
+                <li><a href="./macwhisper-free-alternative.html">MacWhisper free alternative</a></li>
+                <li><a href="./otter-ai-offline-alternative.html">Otter.ai offline alternative</a></li>
+                <li><a href="./macos-apple-silicon-transcription.html">macOS Apple Silicon guide</a></li>
+                <li><a href="./windows-offline-transcription.html">Windows offline guide</a></li>
+                <li><a href="./architecture-and-testing.html">Architecture and E2E tests</a></li>
+                <li><a href="./guides.html">Full SEO index (22 guides)</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <span>Audio Transcription Studio (MIT License)</span>
-        <span>
-          <a href="https://github.com/voice-to-text/audio-transcription-service">Repository</a>
-          &middot;
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./guides.html">Guides</a>
           <a href="./llms.txt">llms.txt</a>
-          &middot;
           <a href="./sitemap.xml">sitemap.xml</a>
-        </span>
+        </div>
       </div>
     </footer>
+
+    <script>
+      (function () {
+        var samples = {
+          mixed: {
+            meta: "Detected: mixed (ru+en)",
+            text: "1\n00:00:00,000 --> 00:00:03,760\nДобрый день, локальная студия автоматически распознает русскую\n\n2\n00:00:03,760 --> 00:00:05,440\nречи сохраняет субтитры.\n\n3\n00:00:06,000 --> 00:00:10,840\nNow we switch to English to confirm bilingual subtitles."
+          },
+          en: {
+            meta: "Detected: en",
+            text: "1\n00:00:00,000 --> 00:00:04,400\nWelcome to Audio Transcription Studio. Everything works automatically."
+          },
+          ru: {
+            meta: "Detected: ru",
+            text: "1\n00:00:00,000 --> 00:00:04,200\nЛокальная студия переводит аудио и видео в текст без интернета."
+          }
+        };
+        var btns = document.querySelectorAll(".switch-btn");
+        var code = document.getElementById("sample-code");
+        var meta = document.getElementById("sample-meta");
+        btns.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var key = btn.getAttribute("data-sample");
+            if (!samples[key]) return;
+            btns.forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+            btn.setAttribute("aria-pressed", "true");
+            code.textContent = samples[key].text;
+            meta.textContent = samples[key].meta;
+          });
+        });
+      })();
+    </script>
   </body>
 </html>

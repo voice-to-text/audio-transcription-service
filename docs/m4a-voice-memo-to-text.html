@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M4A Voice Memo to Text Converter Offline - Audio Transcription Studio</title>
+    <meta name="description" content="Convert iPhone Voice Memos and M4A AAC recordings into searchable TXT, SRT, and VTT transcripts locally." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/m4a-voice-memo-to-text.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="M4A Voice Memo to Text Converter Offline" />
+    <meta property="og:description" content="Convert iPhone Voice Memos and M4A AAC recordings into searchable TXT, SRT, and VTT transcripts locally." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/m4a-voice-memo-to-text.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Convert M4A voice memos to text offline",
+        "description": "Convert iPhone Voice Memos and M4A AAC recordings into searchable TXT, SRT, and VTT transcripts locally.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/m4a-voice-memo-to-text.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Convert M4A voice memos to text offline</h1>
+          <p class="lead">Drop Apple Voice Memos or mobile M4A recordings straight into Watch Folder for automatic text export.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>Native AAC inside M4A containers</h2>
+          <p>iPhone Voice Memos, macOS QuickTime recordings, and mobile recorders save AAC audio inside M4A containers. Symphonia demuxes the ISO MP4 container and decodes AAC locally.</p>
+          <h2>Watch Folder sync workflow</h2>
+          <p>Point Watch Folder at a synced Voice Memos export folder. New M4A files wait for copy completion and export TXT, SRT, and VTT automatically.</p>
+          <h2>Duplicate-safe re-imports</h2>
+          <p>If the same M4A file is dropped twice or copied under another name, SHA-256 tracking marks it Skipped (Duplicate) instead of running Whisper again.</p>
+          <pre>voice_memo.m4a -&gt; voice_memo.txt + voice_memo.srt + voice_memo.vtt</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./mp4-video-to-text-subtitles.html">Extract text and subtitles from MP4 video</a></li>
+            <li><a href="./watch-folder-automation.html">Watch Folder automation and copy stability</a></li>
+            <li><a href="./macos-apple-silicon-transcription.html">Offline Whisper transcription on macOS</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

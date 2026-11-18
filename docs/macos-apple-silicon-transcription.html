@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offline Whisper Transcription on macOS Apple Silicon - Audio Transcription Studio</title>
+    <meta name="description" content="Run native Tauri 2 and whisper.cpp Metal-accelerated speech-to-text on macOS M1, M2, M3, and Intel Macs." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/macos-apple-silicon-transcription.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Offline Whisper Transcription on macOS Apple Silicon" />
+    <meta property="og:description" content="Run native Tauri 2 and whisper.cpp Metal-accelerated speech-to-text on macOS M1, M2, M3, and Intel Macs." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/macos-apple-silicon-transcription.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Offline Whisper transcription on macOS",
+        "description": "Run native Tauri 2 and whisper.cpp Metal-accelerated speech-to-text on macOS M1, M2, M3, and Intel Macs.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/macos-apple-silicon-transcription.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Offline Whisper transcription on macOS</h1>
+          <p class="lead">Install via DMG or build from source on Apple Silicon with Metal acceleration through whisper-cli.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>Lightweight native bundle</h2>
+          <p>Built with Tauri 2 and Rust, the macOS .app bundle compiles to under 6 MB without shipping an Electron runtime.</p>
+          <h2>Metal GPU acceleration via whisper.cpp</h2>
+          <p>Homebrew whisper-cli uses Apple Metal automatically on M-series Macs for fast local transcription.</p>
+          <h2>FSEvents Watch Folder integration</h2>
+          <p>The directory watcher hooks into macOS FSEvents and stores persistent queue state in ~/Library/Application Support/Audio Transcription Studio.</p>
+          <pre>brew install whisper-cpp &amp;&amp; npm run tauri build</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./windows-offline-transcription.html">Offline Whisper transcription on Windows</a></li>
+            <li><a href="./macwhisper-free-alternative.html">Free open-source alternative to MacWhisper</a></li>
+            <li><a href="./m4a-voice-memo-to-text.html">Convert M4A voice memos to text offline</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

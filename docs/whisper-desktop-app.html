@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whisper Desktop App for macOS and Windows - Audio Transcription Studio</title>
+    <meta name="description" content="Graphical desktop interface for whisper.cpp with drag and drop, Watch Folder automation, and clickable timestamp playback." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/whisper-desktop-app.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Whisper Desktop App for macOS and Windows" />
+    <meta property="og:description" content="Graphical desktop interface for whisper.cpp with drag and drop, Watch Folder automation, and clickable timestamp playback." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/whisper-desktop-app.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Whisper desktop app with Watch Folder and player",
+        "description": "Graphical desktop interface for whisper.cpp with drag and drop, Watch Folder automation, and clickable timestamp playback.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/whisper-desktop-app.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Whisper desktop app with Watch Folder and player</h1>
+          <p class="lead">Use whisper.cpp with ggml-base.bin through a native Tauri 2 and React interface instead of terminal flags.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>No command-line setup for daily work</h2>
+          <p>Running whisper-cli manually requires converting MP4 or M4A audio to 16 kHz mono WAV first and shifting timestamps across long chunks. Audio Transcription Studio automates decoding, chunking, inference, and export.</p>
+          <h2>Multilingual GGML model support</h2>
+          <p>Place ggml-base.bin or another GGML model in models/ or your OS application support directory. Each speech chunk runs with automatic language detection.</p>
+          <h2>Visual queue and error log</h2>
+          <p>Track progress per file from 0% to 100%, inspect corrupted inputs in the Error Log, and re-run any file manually with one click.</p>
+          <pre>whisper-cli -m models/ggml-base.bin -f chunk_0000.wav -l auto -oj -np -sns</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./offline-audio-transcription.html">Offline audio transcription app without internet</a></li>
+            <li><a href="./macwhisper-free-alternative.html">Free open-source alternative to MacWhisper</a></li>
+            <li><a href="./architecture-and-testing.html">Architecture, recovery, and end-to-end tests</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

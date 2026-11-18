@@ -4,5 +4,7 @@ src-tauri/target/
 models/*.bin
 tests/fixtures/
 tests/output/
+.hallmark/
+docs/.hallmark/
 .DS_Store
 *.log

@@ -6,7 +6,7 @@
 
 Audio Transcription Studio is a free desktop audio and video transcription tool built with Tauri 2, Rust, React, and whisper.cpp. It turns MP3, WAV, M4A, and MP4 files into TXT, SRT, and VTT files right on your machine with no accounts, API keys, or internet access.
 
-Documentation and guides: [https://voice-to-text.github.io/audio-transcription-service/](https://voice-to-text.github.io/audio-transcription-service/)
+Documentation and guides: [https://voice-to-text.github.io/audio-transcription-service/](https://voice-to-text.github.io/audio-transcription-service/) | [All 22 Topic Guides](https://voice-to-text.github.io/audio-transcription-service/guides.html) | [Semantic Core and Keyword Clusters](./SEO_CORE.md)
 
 ## Comparison
 

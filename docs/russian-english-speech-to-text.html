@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Russian, English, and Mixed Speech-to-Text Offline - Audio Transcription Studio</title>
+    <meta name="description" content="Automatic language detection for Russian, English, and bilingual Russian-English recordings using local whisper.cpp." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/russian-english-speech-to-text.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Russian, English, and Mixed Speech-to-Text Offline" />
+    <meta property="og:description" content="Automatic language detection for Russian, English, and bilingual Russian-English recordings using local whisper.cpp." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/russian-english-speech-to-text.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Russian, English, and mixed speech recognition",
+        "description": "Automatic language detection for Russian, English, and bilingual Russian-English recordings using local whisper.cpp.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/russian-english-speech-to-text.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Russian, English, and mixed speech recognition</h1>
+          <p class="lead">Transcribe English, Russian, and bilingual recordings locally without manually picking a language.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>Per-chunk automatic language detection</h2>
+          <p>Pause-based VAD splits speech turns so Russian and English segments inside one recording are evaluated independently with whisper-cli -l auto.</p>
+          <h2>Script-aware language classification</h2>
+          <p>The classifier combines Whisper metadata with Cyrillic and Latin character ratios to label en, ru, or mixed (ru+en).</p>
+          <h2>Full UTF-8 subtitle export</h2>
+          <p>TXT, SRT, and VTT files save in UTF-8 so Cyrillic and Latin characters render cleanly in every editor.</p>
+          <pre>Cyrillic + Latin segments across chunks -&gt; detectedLanguage: &quot;mixed (ru+en)&quot;</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./noisy-audio-and-silence-vad.html">Handle background noise, multiple speakers, and silence</a></li>
+            <li><a href="./offline-whisper-formats.html">Supported formats, languages, and VAD chunking</a></li>
+            <li><a href="./whisper-desktop-app.html">Whisper desktop app with Watch Folder and player</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

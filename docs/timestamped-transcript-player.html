@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Built-in Audio Player with Clickable Transcript Timestamps - Audio Transcription Studio</title>
+    <meta name="description" content="Review transcripts side-by-side with an integrated audio and video player featuring 1x-2x speed and click-to-seek segments." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/timestamped-transcript-player.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Built-in Audio Player with Clickable Transcript Timestamps" />
+    <meta property="og:description" content="Review transcripts side-by-side with an integrated audio and video player featuring 1x-2x speed and click-to-seek segments." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/timestamped-transcript-player.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Click timestamps to verify spoken audio",
+        "description": "Review transcripts side-by-side with an integrated audio and video player featuring 1x-2x speed and click-to-seek segments.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/timestamped-transcript-player.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Click timestamps to verify spoken audio</h1>
+          <p class="lead">Jump straight to any phrase in MP3, WAV, M4A, or MP4 recordings from the transcript panel.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>HTTP 206 byte-range streaming</h2>
+          <p>A local server on 127.0.0.1:4895 serves local media with Accept-Ranges: bytes and 206 Partial Content responses so seeking works cleanly across 1-hour files.</p>
+          <h2>Active segment tracking</h2>
+          <p>As playback progresses, the segment matching the current millisecond highlights automatically.</p>
+          <h2>Playback speed controls</h2>
+          <p>Switch between 1x, 1.25x, 1.5x, and 2x speed to proofread long meetings faster.</p>
+          <pre>GET /media?path=meeting.mp3 (Range: bytes=0-1023) -&gt; 206 Partial Content</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./audio-to-srt-subtitles.html">Generate SRT subtitles from audio and video</a></li>
+            <li><a href="./mp4-video-to-text-subtitles.html">Extract text and subtitles from MP4 video</a></li>
+            <li><a href="./architecture-and-testing.html">Architecture, recovery, and end-to-end tests</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

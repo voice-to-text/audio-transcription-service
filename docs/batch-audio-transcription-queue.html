@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Batch Audio Transcription Queue with Crash Recovery - Audio Transcription Studio</title>
+    <meta name="description" content="Process multiple MP3, WAV, M4A, and MP4 files in sequence with live progress bars, error isolation, and automatic restart recovery." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/batch-audio-transcription-queue.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Batch Audio Transcription Queue with Crash Recovery" />
+    <meta property="og:description" content="Process multiple MP3, WAV, M4A, and MP4 files in sequence with live progress bars, error isolation, and automatic restart recovery." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/batch-audio-transcription-queue.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Batch transcription queue that survives restarts",
+        "description": "Process multiple MP3, WAV, M4A, and MP4 files in sequence with live progress bars, error isolation, and automatic restart recovery.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/batch-audio-transcription-queue.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Batch transcription queue that survives restarts</h1>
+          <p class="lead">Queue dozens of recordings at once with per-file progress, isolated errors, and persistent disk recovery.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>Non-blocking background worker</h2>
+          <p>A dedicated worker thread processes queued items sequentially while the UI and Watch Folder remain responsive.</p>
+          <h2>Error isolation</h2>
+          <p>Corrupted files, unsupported extensions, and read-only folder errors log into the Error Log and mark only that item Failed, while remaining items continue.</p>
+          <h2>Automatic resume after restart</h2>
+          <p>Closing the app mid-queue preserves queue_state.json on disk. Reopening resets in-flight Decoding, Transcribing, or Exporting items back to Queued and finishes them.</p>
+          <pre>queue_state.json -&gt; Decoding/Transcribing on crash -&gt; reset to Queued on launch</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./watch-folder-automation.html">Watch Folder automation and copy stability</a></li>
+            <li><a href="./duplicate-file-protection-sha256.html">Skip duplicate audio files automatically</a></li>
+            <li><a href="./architecture-and-testing.html">Architecture, recovery, and end-to-end tests</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

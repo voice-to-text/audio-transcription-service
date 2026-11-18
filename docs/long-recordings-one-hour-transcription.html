@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transcribe 1-Hour Audio and Video Files Offline - Audio Transcription Studio</title>
+    <meta name="description" content="Process 5-minute interviews and 1-hour lectures locally using VAD chunking with accurate hour-long SRT and VTT timestamps." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/long-recordings-one-hour-transcription.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Transcribe 1-Hour Audio and Video Files Offline" />
+    <meta property="og:description" content="Process 5-minute interviews and 1-hour lectures locally using VAD chunking with accurate hour-long SRT and VTT timestamps." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/long-recordings-one-hour-transcription.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Transcribe 1-hour recordings without losing timings",
+        "description": "Process 5-minute interviews and 1-hour lectures locally using VAD chunking with accurate hour-long SRT and VTT timestamps.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/long-recordings-one-hour-transcription.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Transcribe 1-hour recordings without losing timings</h1>
+          <p class="lead">Energy VAD skips silent gaps and bounds active speech chunks to 26 seconds with exact millisecond offsets.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>Bounded 26-second chunks</h2>
+          <p>Continuous speech longer than 26 seconds splits at the lowest-energy 100 ms window near the boundary so words stay intact.</p>
+          <h2>Fast silent-gap skipping</h2>
+          <p>In long recordings with sparse speech, silent stretches are skipped in memory while preserving exact start_ms offsets up to 01:00:00+.</p>
+          <h2>Verified on 10s, 5m, and 1h benchmarks</h2>
+          <p>The end-to-end test suite verifies 10-second, 5-minute, and 1-hour files with checkpoints at 00:02, 30:00, and 59:45.</p>
+          <pre>3
+00:59:43,000 --&gt; 00:59:46,000
+Final checkpoint near the end of the recording.</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./noisy-audio-and-silence-vad.html">Handle background noise, multiple speakers, and silence</a></li>
+            <li><a href="./mp3-to-text-offline.html">Convert MP3 files to text offline</a></li>
+            <li><a href="./architecture-and-testing.html">Architecture, recovery, and end-to-end tests</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

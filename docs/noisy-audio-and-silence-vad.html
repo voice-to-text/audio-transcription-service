@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noisy Audio Transcription and Silence Hallucination Prevention - Audio Transcription Studio</title>
+    <meta name="description" content="Energy-based voice activity detection skips pure silence without hallucinations and transcribes speech under background noise." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/noisy-audio-and-silence-vad.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Noisy Audio Transcription and Silence Hallucination Prevention" />
+    <meta property="og:description" content="Energy-based voice activity detection skips pure silence without hallucinations and transcribes speech under background noise." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/noisy-audio-and-silence-vad.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Handle background noise, multiple speakers, and silence",
+        "description": "Energy-based voice activity detection skips pure silence without hallucinations and transcribes speech under background noise.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/noisy-audio-and-silence-vad.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Handle background noise, multiple speakers, and silence</h1>
+          <p class="lead">Built-in RMS energy analysis prevents Whisper silence hallucinations and segments multi-speaker pauses.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>Pure silence gate</h2>
+          <p>If every 100 ms window stays below the RMS energy and peak threshold, Whisper is skipped and empty TXT/SRT/WEBVTT files are exported with zero fabricated words.</p>
+          <h2>Background noise resilience</h2>
+          <p>Recordings with steady room tone or pink noise pass through Whisper with -sns non-speech token suppression enabled.</p>
+          <h2>Multi-speaker pause splitting</h2>
+          <p>Natural pauses longer than 550 ms split dialogue turns into separate chunks so alternating speakers transcribe cleanly.</p>
+          <pre>max_rms &lt; 0.0012 &amp;&amp; max_peak &lt; 120 -&gt; is_silent: true (0 hallucinations)</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./russian-english-speech-to-text.html">Russian, English, and mixed speech recognition</a></li>
+            <li><a href="./long-recordings-one-hour-transcription.html">Transcribe 1-hour recordings without losing timings</a></li>
+            <li><a href="./wav-to-text-transcription.html">WAV to text transcription on desktop</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

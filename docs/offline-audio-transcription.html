@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offline Audio Transcription App for macOS and Windows - Audio Transcription Studio</title>
+    <meta name="description" content="Run local audio and video transcription without internet, API keys, or cloud uploads using whisper.cpp on macOS and Windows." />
+    <link rel="canonical" href="https://voice-to-text.github.io/audio-transcription-service/offline-audio-transcription.html" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Offline Audio Transcription App for macOS and Windows" />
+    <meta property="og:description" content="Run local audio and video transcription without internet, API keys, or cloud uploads using whisper.cpp on macOS and Windows." />
+    <meta property="og:url" content="https://voice-to-text.github.io/audio-transcription-service/offline-audio-transcription.html" />
+    <meta property="og:image" content="https://voice-to-text.github.io/audio-transcription-service/assets/icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Offline audio transcription app without internet",
+        "description": "Run local audio and video transcription without internet, API keys, or cloud uploads using whisper.cpp on macOS and Windows.",
+        "url": "https://voice-to-text.github.io/audio-transcription-service/offline-audio-transcription.html",
+        "author": {
+          "@type": "Organization",
+          "name": "voice-to-text"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container article-wrap">
+          <h1>Offline audio transcription app without internet</h1>
+          <p class="lead">Turn recordings into TXT, SRT, and VTT files on your own hardware with zero network calls.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="https://github.com/voice-to-text/audio-transcription-service/releases">Download Release</a>
+            <a class="link-quiet" href="https://github.com/voice-to-text/audio-transcription-service">View on GitHub</a>
+          </div>
+        </div>
+      </section>
+      <section class="band">
+        <div class="container article-wrap">
+          <h2>Why transcribe locally</h2>
+          <p>Cloud transcription services require uploading private interviews, client meetings, and raw voice notes to third-party servers. Audio Transcription Studio keeps every byte on disk. Audio decoding, voice activity segmentation, Whisper inference, and subtitle writing run inside one desktop app.</p>
+          <h2>Supported inputs and outputs</h2>
+          <p>Drop MP3, WAV, M4A, or MP4 files into the window or pick them from the system dialog. Each completed file produces a plain text TXT file, a SubRip SRT file, and a WebVTT VTT file right next to the original media.</p>
+          <h2>Built for offline reliability</h2>
+          <p>Queue state and SHA-256 content hashes persist in queue_state.json so unfinished files resume automatically if the app restarts.</p>
+          <pre>GET http://127.0.0.1:4895/health
+-&gt; offlineMode: true, engine.ready: true</pre>
+          <h2>Related guides</h2>
+          <ul class="cluster-links">
+            <li><a href="./whisper-desktop-app.html">Whisper desktop app with Watch Folder and player</a></li>
+            <li><a href="./private-speech-to-text-no-cloud.html">Private speech to text with zero cloud uploads</a></li>
+            <li><a href="./watch-folder-automation.html">Watch Folder automation and copy stability</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-close">
+        <span class="footer-signoff">Audio Transcription Studio, MIT License</span>
+        <div class="footer-links">
+          <a href="./">Overview</a>
+          <a href="./guides.html">All Guides</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+          <a href="./llms.txt">llms.txt</a>
+          <a href="./sitemap.xml">sitemap.xml</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

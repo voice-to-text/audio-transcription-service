@@ -3,7 +3,29 @@
 > Free offline desktop audio and video transcription app for macOS and Windows powered by Tauri 2, Rust, React, and whisper.cpp.
 
 - Repository: https://github.com/voice-to-text/audio-transcription-service
-- Docs: https://voice-to-text.github.io/audio-transcription-service/
-- Watch Folder guide: https://voice-to-text.github.io/audio-transcription-service/watch-folder-automation.html
-- Formats & Languages: https://voice-to-text.github.io/audio-transcription-service/offline-whisper-formats.html
-- Architecture & Tests: https://voice-to-text.github.io/audio-transcription-service/architecture-and-testing.html
+- Overview: https://voice-to-text.github.io/audio-transcription-service/
+- Guides Directory: https://voice-to-text.github.io/audio-transcription-service/guides.html
+
+## Topic Pages
+- Offline audio transcription app without internet: https://voice-to-text.github.io/audio-transcription-service/offline-audio-transcription.html
+- Whisper desktop app with Watch Folder and player: https://voice-to-text.github.io/audio-transcription-service/whisper-desktop-app.html
+- Private speech to text with zero cloud uploads: https://voice-to-text.github.io/audio-transcription-service/private-speech-to-text-no-cloud.html
+- Convert MP3 files to text offline: https://voice-to-text.github.io/audio-transcription-service/mp3-to-text-offline.html
+- WAV to text transcription on desktop: https://voice-to-text.github.io/audio-transcription-service/wav-to-text-transcription.html
+- Convert M4A voice memos to text offline: https://voice-to-text.github.io/audio-transcription-service/m4a-voice-memo-to-text.html
+- Extract text and subtitles from MP4 video: https://voice-to-text.github.io/audio-transcription-service/mp4-video-to-text-subtitles.html
+- Generate SRT subtitles from audio and video: https://voice-to-text.github.io/audio-transcription-service/audio-to-srt-subtitles.html
+- Generate WebVTT captions from audio: https://voice-to-text.github.io/audio-transcription-service/audio-to-vtt-webvtt-captions.html
+- Click timestamps to verify spoken audio: https://voice-to-text.github.io/audio-transcription-service/timestamped-transcript-player.html
+- Batch transcription queue that survives restarts: https://voice-to-text.github.io/audio-transcription-service/batch-audio-transcription-queue.html
+- Skip duplicate audio files automatically: https://voice-to-text.github.io/audio-transcription-service/duplicate-file-protection-sha256.html
+- Russian, English, and mixed speech recognition: https://voice-to-text.github.io/audio-transcription-service/russian-english-speech-to-text.html
+- Handle background noise, multiple speakers, and silence: https://voice-to-text.github.io/audio-transcription-service/noisy-audio-and-silence-vad.html
+- Transcribe 1-hour recordings without losing timings: https://voice-to-text.github.io/audio-transcription-service/long-recordings-one-hour-transcription.html
+- Free open-source alternative to MacWhisper: https://voice-to-text.github.io/audio-transcription-service/macwhisper-free-alternative.html
+- Offline alternative to Otter.ai: https://voice-to-text.github.io/audio-transcription-service/otter-ai-offline-alternative.html
+- Offline Whisper transcription on macOS: https://voice-to-text.github.io/audio-transcription-service/macos-apple-silicon-transcription.html
+- Offline Whisper transcription on Windows: https://voice-to-text.github.io/audio-transcription-service/windows-offline-transcription.html
+- Watch Folder automation and copy stability: https://voice-to-text.github.io/audio-transcription-service/watch-folder-automation.html
+- Supported formats, languages, and VAD chunking: https://voice-to-text.github.io/audio-transcription-service/offline-whisper-formats.html
+- Architecture, recovery, and end-to-end tests: https://voice-to-text.github.io/audio-transcription-service/architecture-and-testing.html
