@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Architecture, Crash Recovery, and End-to-End Tests - Audio Transcription Studio</title>
+    <meta
+      name="description"
+      content="Shared Tauri 2 + Rust + React architecture for macOS and Windows, persistent queue crash recovery, and the 10-scenario end-to-end verification suite."
+    />
+    <link
+      rel="canonical"
+      href="https://voice-to-text.github.io/audio-transcription-service/architecture-and-testing.html"
+    />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats &amp; Languages</a>
+          <a href="./architecture-and-testing.html" aria-current="page">Architecture &amp; Tests</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="container article-body">
+          <h1>Architecture, restart recovery, and testing</h1>
+          <p class="lead">
+            One shared codebase compiles native desktop installers for macOS and Windows while
+            keeping background queue state safe on disk.
+          </p>
+
+          <h2>Shared macOS and Windows codebase</h2>
+          <p>
+            The desktop shell uses Tauri 2 and React 19, while all media decoding, directory
+            watching, queue scheduling, and file export logic runs in Rust. On Windows, subprocess
+            calls to <code>whisper-cli.exe</code> set <code>CREATE_NO_WINDOW</code> so background
+            recognition runs without flashing console windows.
+          </p>
+
+          <h2>Queue persistence and crash recovery</h2>
+          <p>
+            Every queue change writes atomically to <code>queue_state.json</code>. If the app is
+            closed mid-batch while items are in <code>Decoding</code>, <code>Transcribing</code>,
+            or <code>Exporting</code>, the next launch resets those interrupted entries to
+            <code>Queued</code> and resumes the worker loop without losing any files.
+          </p>
+
+          <h2>Built-in media streaming player</h2>
+          <p>
+            A lightweight loopback HTTP server on <code>127.0.0.1:4895</code> serves local audio
+            and video files with HTTP <code>206 Partial Content</code> byte-range responses. When
+            you click a segment timestamp in React, the HTML5 player seeks directly to that
+            millisecond offset.
+          </p>
+
+          <h2>End-to-end test coverage</h2>
+          <p>
+            Run <code>node tests/run_e2e_tests.mjs</code> against the release binary to verify all
+            formats (MP3, WAV, M4A, MP4), languages (English, Russian, mixed), durations (10s, 5m,
+            1h), background noise, multi-speaker dialogue, pure silence, 10-file watch folder copy
+            stability, duplicate skipping, error handling, restart recovery, and clean startup.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>Audio Transcription Studio (MIT License)</span>
+        <span><a href="./">Back to Overview</a></span>
+      </div>
+    </footer>
+  </body>
+</html>

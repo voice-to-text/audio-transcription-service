@@ -1,0 +1,3 @@
+docs/* linguist-documentation
+tests/* linguist-vendored
+*.html linguist-detectable=false

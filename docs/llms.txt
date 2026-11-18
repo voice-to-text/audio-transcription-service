@@ -1,0 +1,9 @@
+# Audio Transcription Studio
+
+> Free offline desktop audio and video transcription app for macOS and Windows powered by Tauri 2, Rust, React, and whisper.cpp.
+
+- Repository: https://github.com/voice-to-text/audio-transcription-service
+- Docs: https://voice-to-text.github.io/audio-transcription-service/
+- Watch Folder guide: https://voice-to-text.github.io/audio-transcription-service/watch-folder-automation.html
+- Formats & Languages: https://voice-to-text.github.io/audio-transcription-service/offline-whisper-formats.html
+- Architecture & Tests: https://voice-to-text.github.io/audio-transcription-service/architecture-and-testing.html

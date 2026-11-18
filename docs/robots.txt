@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://voice-to-text.github.io/audio-transcription-service/sitemap.xml

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supported Formats, Languages, and Long Recordings - Audio Transcription Studio</title>
+    <meta
+      name="description"
+      content="Details on MP3, WAV, M4A, and MP4 decoding, English/Russian/mixed speech detection, noise resilience, silence handling, and 1-hour VAD chunking."
+    />
+    <link
+      rel="canonical"
+      href="https://voice-to-text.github.io/audio-transcription-service/offline-whisper-formats.html"
+    />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html">Watch Folder</a>
+          <a href="./offline-whisper-formats.html" aria-current="page">Formats &amp; Languages</a>
+          <a href="./architecture-and-testing.html">Architecture &amp; Tests</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="container article-body">
+          <h1>Supported formats, language detection, and long audio</h1>
+          <p class="lead">
+            Pure-Rust audio decoding paired with energy voice activity segmentation and multilingual
+            whisper.cpp inference.
+          </p>
+
+          <h2>MP3, WAV, M4A, and MP4 decoding</h2>
+          <p>
+            Media files are decoded locally using Rust <code>symphonia</code> (supporting MP3, PCM
+            and float WAV, AAC inside M4A, and audio tracks inside MP4 containers) and resampled to
+            16 kHz mono 16-bit PCM for Whisper. If a specialized container requires extra demuxing,
+            the pipeline falls back to local <code>ffmpeg</code> when installed. Any unsupported file
+            extension or truncated stream raises <code>UNSUPPORTED_FORMAT</code> or
+            <code>CORRUPTED_FILE</code> in the Error Log without halting other jobs.
+          </p>
+
+          <h2>English, Russian, and mixed speech detection</h2>
+          <p>
+            Each speech chunk passes <code>-l auto</code> to <code>whisper-cli</code>. After all
+            chunks complete, the language classifier inspects Whisper's detected language code
+            alongside Cyrillic and Latin character counts across all segments. Recordings containing
+            substantial phrases in both Russian and English are labeled <code>mixed (ru+en)</code>.
+          </p>
+
+          <h2>Silence detection and 1-hour VAD chunking</h2>
+          <p>
+            Before running inference, the audio engine computes per-100 ms RMS energy across the
+            entire recording:
+          </p>
+          <ul>
+            <li>
+              Pure silence recordings below the energy floor skip Whisper completely so zero
+              hallucinated phrases appear, exporting empty TXT and clean <code>WEBVTT</code> files.
+            </li>
+            <li>
+              Recordings longer than 29 seconds split on quiet pauses into active chunks up to 26
+              seconds long. Each chunk retains its exact millisecond offset so exported SRT and VTT
+              timestamps stay aligned across 5-minute and 1-hour files.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>Audio Transcription Studio (MIT License)</span>
+        <span><a href="./">Back to Overview</a></span>
+      </div>
+    </footer>
+  </body>
+</html>

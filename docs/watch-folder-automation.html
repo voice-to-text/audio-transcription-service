@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch Folder Automation and Duplicate Guard - Audio Transcription Studio</title>
+    <meta
+      name="description"
+      content="How Watch Folder monitors directories for MP3, WAV, M4A, and MP4 files, waits for file copying to finish, skips SHA-256 duplicates, and saves TXT, SRT, and VTT files."
+    />
+    <link
+      rel="canonical"
+      href="https://voice-to-text.github.io/audio-transcription-service/watch-folder-automation.html"
+    />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <img src="./assets/icon.png" alt="Audio Transcription Studio icon" width="28" height="28" />
+          <span>Audio Transcription Studio</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="./">Overview</a>
+          <a href="./watch-folder-automation.html" aria-current="page">Watch Folder</a>
+          <a href="./offline-whisper-formats.html">Formats &amp; Languages</a>
+          <a href="./architecture-and-testing.html">Architecture &amp; Tests</a>
+          <a href="https://github.com/voice-to-text/audio-transcription-service">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="container article-body">
+          <h1>Watch Folder automation and duplicate protection</h1>
+          <p class="lead">
+            Pick a local folder once and let the studio transcribe every incoming audio or video
+            recording automatically.
+          </p>
+
+          <h2>Waiting for file copy completion</h2>
+          <p>
+            Copying a large MP4 video or podcast MP3 into a watched folder often takes several
+            seconds. Starting transcription too early reads an incomplete file and triggers a
+            decode error.
+          </p>
+          <p>
+            Audio Transcription Studio combines native filesystem events via Rust <code>notify</code>
+            (FSEvents on macOS and ReadDirectoryChangesW on Windows) with a stability check. Each
+            new file must report a non-zero byte size that stays unchanged across consecutive
+            polling ticks for at least 700 ms and allow clean file opening before entering the
+            queue. Temporary browser downloads (<code>.part</code>, <code>.crdownload</code>,
+            <code>.tmp</code>) and output files (<code>.txt</code>, <code>.srt</code>,
+            <code>.vtt</code>) are ignored.
+          </p>
+
+          <h2>SHA-256 duplicate protection</h2>
+          <p>
+            Every file entering the queue is hashed with SHA-256. After transcription succeeds, the
+            hash and source path are stored in <code>queue_state.json</code>. Dropping the same
+            file again or copying an identical recording under a new filename marks it as
+            <code>Skipped (Duplicate)</code> without wasting CPU time running Whisper again. You
+            can still override this manually with the <code>Re-transcribe</code> button on any item.
+          </p>
+
+          <h2>Sidecar TXT, SRT, and VTT exports</h2>
+          <p>
+            When recognition finishes, three files are written atomically next to the original
+            media file:
+          </p>
+          <pre>/path/to/recording.mp4
+/path/to/recording.txt   (plain text transcript)
+/path/to/recording.srt   (SubRip subtitles with HH:MM:SS,mmm timings)
+/path/to/recording.vtt   (WebVTT subtitles with WEBVTT header)</pre>
+          <p>
+            If the destination directory is read-only or loses write permissions, the exporter logs
+            a <code>PERMISSION_DENIED</code> entry in the Error Log and moves on to the remaining
+            files in the queue.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>Audio Transcription Studio (MIT License)</span>
+        <span><a href="./">Back to Overview</a></span>
+      </div>
+    </footer>
+  </body>
+</html>

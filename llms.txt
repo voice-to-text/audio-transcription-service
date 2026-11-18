@@ -1,0 +1,19 @@
+# Audio Transcription Studio (voice-to-text/audio-transcription-service)
+
+> Free offline desktop audio and video transcription app for macOS and Windows powered by Tauri 2, Rust, React, and whisper.cpp.
+
+## Summary
+Audio Transcription Studio converts MP3, WAV, M4A, and MP4 recordings into plain text (TXT), SubRip (SRT), and WebVTT (VTT) files stored next to each source file. It runs locally without registration, cloud uploads, or API keys.
+
+## Key capabilities
+- Drag and drop MP3, WAV, M4A, and MP4 files into the queue.
+- Automatic Watch Folder monitoring with copy-completion waiting before processing.
+- Local Whisper speech recognition with automatic English, Russian, and mixed-language detection.
+- Built-in audio and video player synchronized with clickable transcript timestamps.
+- SHA-256 duplicate protection and persistent queue recovery across app restarts.
+- Detailed Error Log for corrupted files, unsupported extensions, and folder permission errors.
+
+## Links
+- Repository: https://github.com/voice-to-text/audio-transcription-service
+- Documentation: https://voice-to-text.github.io/audio-transcription-service/
+- Releases: https://github.com/voice-to-text/audio-transcription-service/releases
